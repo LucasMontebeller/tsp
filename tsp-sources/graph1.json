@@ -1,0 +1,65 @@
+{
+    "nodes": [
+      {
+        "ident": "A",
+        "neighbors": [
+          {
+            "ident": "B",
+            "distance": 2
+          },
+          {
+            "ident": "C",
+            "distance": 5
+          },
+          {
+            "ident": "D",
+            "distance": 4
+          }
+        ]
+      },
+      {
+        "ident": "B",
+        "neighbors": [
+          {
+            "ident": "C",
+            "distance": 3
+          },
+          {
+            "ident": "D",
+            "distance": 7
+          },
+          {
+            "ident": "E",
+            "distance": 1
+          }
+        ]
+      },
+      {
+        "ident": "C",
+        "neighbors": [
+          {
+            "ident": "A",
+            "distance": 5
+          }
+        ]
+      },
+      {
+        "ident": "D",
+        "neighbors": [
+          {
+            "ident": "A",
+            "distance": 4
+          }
+        ]
+      },
+      {
+        "ident": "E",
+        "neighbors": [
+          {
+            "ident": "A",
+            "distance": 3
+          }
+        ]
+      }
+    ]
+}  
