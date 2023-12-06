@@ -36,6 +36,10 @@ if __name__ == '__main__':
         edge_labels = nx.get_edge_attributes(graph, 'weight')
         nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels)
 
-        plt.show()
+        file_name = os.path.splitext(os.path.basename(file_path))[0]
+        full_file_name = f'tsp-sources/images/{file_name}.png'
+        plt.savefig(full_file_name)
+        print(f'Nova visualização disponivel em {full_file_name}')
+        # plt.show()
     except Exception as ex:
         print(f'Falha ao gerar visualização do grafo: {ex}')
