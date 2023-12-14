@@ -16,6 +16,28 @@
   "Adiciona uma coleção de vetores do tipo [neighbor distance] ao nó."
   (reduce (partial apply add-neighbor) node neighbors-with-distances))
 
+(defn get-by-ident [nodes ident]
+  (first (filter #(= (:ident %) ident) nodes)))
+
+(defn get-neighbors [node]
+  (get-in node [:neighbors]))
+
+(defn visited? [node]
+  (contains? node :visited))
+
+(defn unvisited-neighbors [nodes node]
+  (let [neighbors (get-neighbors node)]
+    (filter
+     (fn [n]
+       (let [ident (first n)
+             neighbor-node (get-by-ident nodes ident)]
+         (not (visited? neighbor-node))))
+     neighbors)))
+
+(defn mark-visited [node]
+  (assoc node :visited true))
+
+(defn brute-force [graph])
 
 ;; Passar para outro arquivo?
 (defn read-json-file [file-path]
