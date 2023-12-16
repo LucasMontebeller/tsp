@@ -2,7 +2,7 @@
   (:require [cheshire.core :as json]))
 
 (defrecord Node [ident neighbors])
-(defrecord Graph [initial nodes])
+(defrecord Graph [nodes])
 
 (defn create-node [ident]
   "Cria um nó com o identificador especificado."
@@ -15,6 +15,10 @@
 (defn add-neighbors [node neighbors-with-distances]
   "Adiciona uma coleção de vetores do tipo [neighbor distance] ao nó."
   (reduce (partial apply add-neighbor) node neighbors-with-distances))
+
+(defn get-nodes [graph]
+  "Retorna os nós do grafo."
+  (get-in graph [:nodes]))
 
 (defn get-by-ident [nodes ident]
   (first (filter #(= (:ident %) ident) nodes)))
@@ -37,7 +41,10 @@
 (defn mark-visited [node]
   (assoc node :visited true))
 
-(defn brute-force [graph])
+(defn connected? [nodes node1 node2]
+  "Verifica se existe uma conexão direta entre dois nós no grafo."
+  (let [neighbors (get-neighbors (get-by-ident nodes node1))]
+    (some #(= (first %) [:ident node2]) neighbors)))
 
 ;; Passar para outro arquivo?
 (defn read-json-file [file-path]
@@ -59,6 +66,5 @@
 (defn read-graph-from-json [file-path]
   "Lê o arquivo JSON e retorna um grafo correspondente."
   (let [data (read-json-file file-path)
-        nodes-map (build-node-map data)
-        initial-node (-> nodes-map vals first)]
-    (->Graph initial-node (->> nodes-map (vals) (vec)))))
+        nodes-map (build-node-map data)]
+    (->Graph (->> nodes-map (vals) (vec)))))
