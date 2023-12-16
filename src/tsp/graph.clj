@@ -21,10 +21,24 @@
   (get-in graph [:nodes]))
 
 (defn get-by-ident [nodes ident]
+  "Retorna um nó pelo seu identificador."
   (first (filter #(= (:ident %) ident) nodes)))
 
 (defn get-neighbors [node]
+  "Retorna os vizinhos pelo nó."
   (get-in node [:neighbors]))
+
+(defn get-neighbors-by-ident [nodes node]
+  "Retorna os vizinhos pelo identificador do nó."
+  (get-neighbors (get-by-ident nodes node)))
+
+(defn get-distance [neighbor]
+  "Extrai a distância do vizinho."
+  (when neighbor
+    (->> neighbor
+         (filter #(= :distance (first %)))
+         first
+         second)))
 
 (defn visited? [node]
   (contains? node :visited))
@@ -43,8 +57,15 @@
 
 (defn connected? [nodes node1 node2]
   "Verifica se existe uma conexão direta entre dois nós no grafo."
-  (let [neighbors (get-neighbors (get-by-ident nodes node1))]
+  (let [neighbors (get-neighbors-by-ident nodes node1)]
     (some #(= (first %) [:ident node2]) neighbors)))
+
+(defn neighbor-distance [nodes node1 node2]
+  "Retorna a distância entre dois nós vizinhos no grafo, se houver uma conexão direta."
+  (let [neighbors (get-neighbors-by-ident nodes node1)
+        neighbor (first (filter #(= (first %) [:ident node2]) neighbors)) 
+        distance (get-distance neighbor)]
+    distance))
 
 ;; Passar para outro arquivo?
 (defn read-json-file [file-path]
