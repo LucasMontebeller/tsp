@@ -3,136 +3,107 @@
       {
         "ident": "A",
         "neighbors": [
-          { "ident": "B", "distance": 4 },
-          { "ident": "C", "distance": 6 },
-          { "ident": "D", "distance": 3 },
-          { "ident": "E", "distance": 7 }
+          { "ident": "B", "distance": 2 },
+          { "ident": "C", "distance": 5 },
+          { "ident": "D", "distance": 9 },
+          { "ident": "E", "distance": 3 }
         ]
       },
       {
         "ident": "B",
         "neighbors": [
-          { "ident": "A", "distance": 4 },
-          { "ident": "C", "distance": 5 },
-          { "ident": "F", "distance": 2 },
-          { "ident": "G", "distance": 8 }
+          { "ident": "A", "distance": 2 },
+          { "ident": "C", "distance": 3 },
+          { "ident": "D", "distance": 7 },
+          { "ident": "F", "distance": 4 },
+          { "ident": "K", "distance": 4 }
         ]
       },
       {
         "ident": "C",
         "neighbors": [
-          { "ident": "A", "distance": 6 },
-          { "ident": "B", "distance": 5 },
-          { "ident": "H", "distance": 4 },
-          { "ident": "I", "distance": 6 }
+          { "ident": "A", "distance": 5 },
+          { "ident": "B", "distance": 3 },
+          { "ident": "G", "distance": 6 },
+          { "ident": "L", "distance": 4 }
         ]
       },
       {
         "ident": "D",
         "neighbors": [
-          { "ident": "A", "distance": 3 },
-          { "ident": "E", "distance": 5 },
-          { "ident": "J", "distance": 7 },
-          { "ident": "K", "distance": 4 }
+          { "ident": "B", "distance": 7 },
+          { "ident": "A", "distance": 9 },
+          { "ident": "H", "distance": 5 }
         ]
       },
       {
         "ident": "E",
         "neighbors": [
-          { "ident": "A", "distance": 7 },
-          { "ident": "D", "distance": 5 },
-          { "ident": "L", "distance": 3 },
-          { "ident": "M", "distance": 6 }
+          { "ident": "A", "distance": 3 },
+          { "ident": "F", "distance": 2 },
+          { "ident": "I", "distance": 8 },
+          { "ident": "L", "distance": 7 }
         ]
       },
       {
         "ident": "F",
         "neighbors": [
-          { "ident": "B", "distance": 2 },
-          { "ident": "G", "distance": 4 },
-          { "ident": "N", "distance": 5 },
-          { "ident": "O", "distance": 3 }
+          { "ident": "B", "distance": 4 },
+          { "ident": "E", "distance": 2 },
+          { "ident": "J", "distance": 6 }
         ]
       },
       {
         "ident": "G",
         "neighbors": [
-          { "ident": "B", "distance": 8 },
-          { "ident": "F", "distance": 4 },
-          { "ident": "P", "distance": 6 },
-          { "ident": "Q", "distance": 7 }
+          { "ident": "C", "distance": 6 },
+          { "ident": "H", "distance": 3 },
+          { "ident": "J", "distance": 5 },
+          { "ident": "L", "distance": 2 }
         ]
       },
       {
         "ident": "H",
         "neighbors": [
-          { "ident": "C", "distance": 4 },
-          { "ident": "I", "distance": 3 },
-          { "ident": "R", "distance": 5 },
-          { "ident": "S", "distance": 6 }
+          { "ident": "D", "distance": 5 },
+          { "ident": "G", "distance": 3 },
+          { "ident": "I", "distance": 4 },
+          { "ident": "K", "distance": 6 }
         ]
       },
       {
         "ident": "I",
         "neighbors": [
-          { "ident": "C", "distance": 6 },
-          { "ident": "H", "distance": 3 },
-          { "ident": "T", "distance": 4 },
-          { "ident": "U", "distance": 7 }
+          { "ident": "E", "distance": 8 },
+          { "ident": "H", "distance": 4 },
+          { "ident": "J", "distance": 7 }
         ]
       },
       {
         "ident": "J",
         "neighbors": [
-          { "ident": "D", "distance": 7 },
-          { "ident": "K", "distance": 6 },
-          { "ident": "V", "distance": 3 },
-          { "ident": "W", "distance": 5 }
+          { "ident": "F", "distance": 6 },
+          { "ident": "G", "distance": 5 },
+          { "ident": "I", "distance": 7 },
+          { "ident": "K", "distance": 7 }
         ]
       },
       {
         "ident": "K",
         "neighbors": [
-          { "ident": "D", "distance": 4 },
-          { "ident": "J", "distance": 6 },
-          { "ident": "X", "distance": 7 },
-          { "ident": "Y", "distance": 2 }
+          { "ident": "H", "distance": 6 },
+          { "ident": "J", "distance": 7 },
+          { "ident": "B", "distance": 7 },
+          { "ident": "L", "distance": 3 }
         ]
       },
       {
         "ident": "L",
         "neighbors": [
-          { "ident": "E", "distance": 3 },
-          { "ident": "M", "distance": 4 },
-          { "ident": "Z", "distance": 5 },
-          { "ident": "AA", "distance": 6 }
-        ]
-      },
-      {
-        "ident": "M",
-        "neighbors": [
-          { "ident": "E", "distance": 6 },
-          { "ident": "L", "distance": 4 },
-          { "ident": "AB", "distance": 3 },
-          { "ident": "AC", "distance": 7 }
-        ]
-      },
-      {
-        "ident": "N",
-        "neighbors": [
-          { "ident": "F", "distance": 5 },
-          { "ident": "O", "distance": 6 },
-          { "ident": "AD", "distance": 2 },
-          { "ident": "AE", "distance": 5 }
-        ]
-      },
-      {
-        "ident": "O",
-        "neighbors": [
-          { "ident": "F", "distance": 3 },
-          { "ident": "N", "distance": 6 },
-          { "ident": "AF", "distance": 4 },
-          { "ident": "AG", "distance": 7 }
+          { "ident": "K", "distance": 3 },
+          { "ident": "G", "distance": 2 },
+          { "ident": "E", "distance": 7 },
+          { "ident": "C", "distance": 4 }
         ]
       }
     ]
