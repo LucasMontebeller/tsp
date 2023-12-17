@@ -1,17 +1,84 @@
 # tsp
 
-FIXME: description
+Este projeto implementa algoritmos para resolver o Problema do Caixeiro Viajante (TSP) em Clojure. 
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Para executar o código deste projeto, é necessário ter o Leiningen instalado. 
+Para isso acesse https://leiningen.org/.
 
 ## Usage
+O programa aceita um arquivo JSON como entrada, contendo informações sobre o grafo a ser analisado, como o exemplo abaixo.
 
-FIXME: explanation
+```json
+{
+  "nodes": [
+    {
+      "ident": "A",
+      "neighbors": [
+        { "ident": "B", "distance": 3 },
+        { "ident": "C", "distance": 2 },
+        { "ident": "D", "distance": 4 },
+        { "ident": "E", "distance": 5 }
+      ]
+    },
+    {
+      "ident": "B",
+      "neighbors": [
+        { "ident": "A", "distance": 3 },
+        { "ident": "C", "distance": 1 },
+        { "ident": "D", "distance": 2 },
+        { "ident": "E", "distance": 3 }
+      ]
+    },
+    {
+      "ident": "C",
+      "neighbors": [
+        { "ident": "A", "distance": 2 },
+        { "ident": "B", "distance": 1 },
+        { "ident": "D", "distance": 3 },
+        { "ident": "E", "distance": 2 }
+      ]
+    },
+    {
+      "ident": "D",
+      "neighbors": [
+        { "ident": "A", "distance": 4 },
+        { "ident": "B", "distance": 2 },
+        { "ident": "C", "distance": 3 },
+        { "ident": "E", "distance": 1 }
+      ]
+    },
+    {
+      "ident": "E",
+      "neighbors": [
+        { "ident": "A", "distance": 5 },
+        { "ident": "B", "distance": 3 },
+        { "ident": "C", "distance": 2 },
+        { "ident": "D", "distance": 1 }
+      ]
+    }
+  ]
+}
+```
 
-    $ java -jar tsp-0.1.0-standalone.jar [args]
+### Para executar via REPL:
+    lein run
 
+### Para executar via arquivo .jar:
+#### 1. Crie o arquivo JAR:
+    lein uberjar
+
+##### 2. Navegar até o diretório com o arquivo JAR:
+    cd target/uberjar
+
+##### 3. Executar o programa:
+    java -jar tsp-0.1.0-SNAPSHOT-standalone.jar
+
+Em ambos os casos irá abrir um prompt solicitando dados para a execução do programa, 
+sendo o primeiro deles o caminho do arquivo json solicitado. Caso não seja informado, irá usar como *default* o arquivo graph1.json dentro do diretório ```tsp-sources```.
+
+Ao final de cada execução também foi incluido uma visualização opcional do grafo, gerada através do arquivo python ```show_graph.py``` e salva como imagem no diretório ```tsp-sources```.
 ## Options
 
 FIXME: listing of options this app accepts.
@@ -19,7 +86,6 @@ FIXME: listing of options this app accepts.
 ## Examples
 
 ...
-
 ### Bugs
 
 ...
