@@ -35,6 +35,7 @@ if __name__ == '__main__':
         nx.draw_networkx_labels(graph, pos, labels=labels, font_weight='bold')
         edge_labels = nx.get_edge_attributes(graph, 'weight')
         nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels)
+        plt.title(f'Total de nós : {len(graph.nodes)}')
 
         file_name = os.path.splitext(os.path.basename(file_path))[0]
         full_file_name = f'tsp-sources/images/{file_name}.png'
