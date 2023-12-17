@@ -1,64 +1,49 @@
 {
-    "nodes": [
-      {
-        "ident": "A",
-        "neighbors": [
-          {
-            "ident": "B",
-            "distance": 2
-          },
-          {
-            "ident": "C",
-            "distance": 5
-          },
-          {
-            "ident": "D",
-            "distance": 9
-          }
-        ]
-      },
-      {
-        "ident": "B",
-        "neighbors": [
-          {
-            "ident": "A",
-            "distance": 2
-          },
-          {
-            "ident": "C",
-            "distance": 3
-          },
-          {
-            "ident": "D",
-            "distance": 7
-          }
-        ]
-      },
-      {
-        "ident": "C",
-        "neighbors": [
-          {
-            "ident": "A",
-            "distance": 5
-          },
-          {
-            "ident": "B",
-            "distance": 3
-          }
-        ]
-      },
-      {
-        "ident": "D",
-        "neighbors": [
-          {
-            "ident": "B",
-            "distance": 7
-          },
-          {
-            "ident": "A",
-            "distance": 9
-          }
-        ]
-      }
-    ]
-}  
+  "nodes": [
+    {
+      "ident": "A",
+      "neighbors": [
+        { "ident": "B", "distance": 3 },
+        { "ident": "C", "distance": 2 },
+        { "ident": "D", "distance": 4 },
+        { "ident": "E", "distance": 5 }
+      ]
+    },
+    {
+      "ident": "B",
+      "neighbors": [
+        { "ident": "A", "distance": 3 },
+        { "ident": "C", "distance": 1 },
+        { "ident": "D", "distance": 2 },
+        { "ident": "E", "distance": 3 }
+      ]
+    },
+    {
+      "ident": "C",
+      "neighbors": [
+        { "ident": "A", "distance": 2 },
+        { "ident": "B", "distance": 1 },
+        { "ident": "D", "distance": 3 },
+        { "ident": "E", "distance": 2 }
+      ]
+    },
+    {
+      "ident": "D",
+      "neighbors": [
+        { "ident": "A", "distance": 4 },
+        { "ident": "B", "distance": 2 },
+        { "ident": "C", "distance": 3 },
+        { "ident": "E", "distance": 1 }
+      ]
+    },
+    {
+      "ident": "E",
+      "neighbors": [
+        { "ident": "A", "distance": 5 },
+        { "ident": "B", "distance": 3 },
+        { "ident": "C", "distance": 2 },
+        { "ident": "D", "distance": 1 }
+      ]
+    }
+  ]
+}

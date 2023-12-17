@@ -1,0 +1,86 @@
+{
+    "nodes": [
+      {
+        "ident": "A",
+        "neighbors": [
+          { "ident": "B", "distance": 2 },
+          { "ident": "C", "distance": 5 },
+          { "ident": "D", "distance": 9 },
+          { "ident": "E", "distance": 3 }
+        ]
+      },
+      {
+        "ident": "B",
+        "neighbors": [
+          { "ident": "A", "distance": 2 },
+          { "ident": "C", "distance": 3 },
+          { "ident": "D", "distance": 7 },
+          { "ident": "F", "distance": 4 }
+        ]
+      },
+      {
+        "ident": "C",
+        "neighbors": [
+          { "ident": "A", "distance": 5 },
+          { "ident": "B", "distance": 3 },
+          { "ident": "G", "distance": 6 }
+        ]
+      },
+      {
+        "ident": "D",
+        "neighbors": [
+          { "ident": "B", "distance": 7 },
+          { "ident": "A", "distance": 9 },
+          { "ident": "H", "distance": 5 }
+        ]
+      },
+      {
+        "ident": "E",
+        "neighbors": [
+          { "ident": "A", "distance": 3 },
+          { "ident": "F", "distance": 2 },
+          { "ident": "I", "distance": 8 }
+        ]
+      },
+      {
+        "ident": "F",
+        "neighbors": [
+          { "ident": "B", "distance": 4 },
+          { "ident": "E", "distance": 2 },
+          { "ident": "J", "distance": 6 }
+        ]
+      },
+      {
+        "ident": "G",
+        "neighbors": [
+          { "ident": "C", "distance": 6 },
+          { "ident": "H", "distance": 3 },
+          { "ident": "J", "distance": 5 }
+        ]
+      },
+      {
+        "ident": "H",
+        "neighbors": [
+          { "ident": "D", "distance": 5 },
+          { "ident": "G", "distance": 3 },
+          { "ident": "I", "distance": 4 }
+        ]
+      },
+      {
+        "ident": "I",
+        "neighbors": [
+          { "ident": "E", "distance": 8 },
+          { "ident": "H", "distance": 4 },
+          { "ident": "J", "distance": 7 }
+        ]
+      },
+      {
+        "ident": "J",
+        "neighbors": [
+          { "ident": "F", "distance": 6 },
+          { "ident": "G", "distance": 5 },
+          { "ident": "I", "distance": 7 }
+        ]
+      }
+    ]
+  }  

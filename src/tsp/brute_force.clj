@@ -7,6 +7,18 @@
             (graph/connected? nodes node1 node2))
           (partition 2 1 permutation)))
 
+(defn valid-cycle? [nodes permutation]
+  "Verifica se o último elemento da permutação consegue alcançar o primeiro nó grafo."
+  (let [start-node (first permutation)
+        end-node (last permutation)]
+    (graph/connected? nodes end-node start-node)))
+
+(defn filter-valid-cycles [nodes all-permutations]
+  "Filtra as permutações válidas que formam ciclos completos e inclui o primeiro elemento no final."
+  (let [valid-cycles (filter #(valid-cycle? nodes %) all-permutations)
+        cycles-with-start (map #(concat % [(first %)]) valid-cycles)]
+    (mapv vec cycles-with-start)))
+
 (defn permute [idents nodes]
   "Calcula todas as permutações possíveis entre os nós do grafo."
   (if (<= (count idents) 1)
@@ -42,8 +54,9 @@
   (let [nodes (graph/get-nodes graph)
         nodes-idents (->> nodes (map :ident) vec)
         all_permutations (permute nodes-idents nodes)
-        all_distances (calculate-all-distances nodes all_permutations)
-        permutation_distances (zipmap all_permutations all_distances)
+        valid_cycles_permutations (filter-valid-cycles nodes all_permutations)
+        all_distances (calculate-all-distances nodes valid_cycles_permutations)
+        permutation_distances (zipmap valid_cycles_permutations all_distances)
         min_permutation_distance (min-permutation-distance permutation_distances)]
     {:all-distances permutation_distances
      :min-distance min_permutation_distance}))
