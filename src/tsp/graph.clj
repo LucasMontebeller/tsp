@@ -1,5 +1,4 @@
-(ns tsp.graph
-  (:require [cheshire.core :as json]))
+(ns tsp.graph)
 
 (defrecord Node [ident neighbors])
 (defrecord Graph [nodes])
@@ -91,42 +90,3 @@
 (defn calculate-all-distances [nodes all-permutations]
   "Calcula a distância total para cada caminho na lista de todas as permutações."
   (map #(total-distance nodes %) all-permutations))
-
-(defn visited? [node]
-  (contains? node :visited))
-
-(defn unvisited-neighbors [nodes node]
-  (let [neighbors (get-neighbors node)]
-    (filter
-     (fn [n]
-       (let [ident (first n)
-             neighbor-node (get-by-ident nodes ident)]
-         (not (visited? neighbor-node))))
-     neighbors)))
-
-(defn mark-visited [node]
-  (assoc node :visited true))
-
-
-;; Passar para outro arquivo?
-(defn read-json-file [file-path]
-  "Lê o conteúdo do arquivo json."
-  (json/parse-string (slurp file-path) true))
-
-(defn build-node-map [data]
-  "Constrói um mapa de nós a partir dos dados do JSON."
-  (reduce
-   (fn [acc node-data]
-     (assoc acc
-            (:ident node-data)
-            (add-neighbors (create-node (:ident node-data))
-                           (:neighbors node-data))))
-   {}
-   (:nodes data)))
-
-;; Utilizar grafo direcionado ou não?
-(defn read-graph-from-json [file-path]
-  "Lê o arquivo JSON e retorna um grafo correspondente."
-  (let [data (read-json-file file-path)
-        nodes-map (build-node-map data)]
-    (->Graph (->> nodes-map (vals) (vec)))))
